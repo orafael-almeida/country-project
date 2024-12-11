@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 interface Country {
@@ -10,6 +11,7 @@ interface Country {
 const TableList = () => {
   const [countries, setCountries] = useState<Country[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -40,6 +42,10 @@ const TableList = () => {
     fetchCountries();
   }, []);
 
+  const handleClick = (countryCode: string) => {
+    router.push(`/${countryCode}`);
+  };
+
   if (loading) {
     return <div className="text-white">Loading...</div>;
   }
@@ -62,7 +68,8 @@ const TableList = () => {
           {countries.map((country) => (
             <tr
               key={country.countryCode}
-              className="bg-white border-b hover:bg-blue-50 "
+              className="cursor-pointer bg-white border-b hover:bg-blue-50 "
+              onClick={() => handleClick(country.countryCode)}
             >
               <td className="px-6 py-4">{country.countryCode}</td>
               <td className="px-6 py-4">{country.name}</td>
