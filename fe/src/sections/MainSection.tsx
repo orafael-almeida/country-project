@@ -6,7 +6,7 @@ const MainSection = () => {
     <div className="h-screen py-32">
       <SectionTitle
         title="Country List"
-        description="Complete list of coutnries and additional informations"
+        description="Complete list of countries. Click to open additional informations"
       />
       <TableList />
     </div>
