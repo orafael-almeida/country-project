@@ -10,9 +10,13 @@ const navLinks = [
 
 const Header = () => {
   return (
-    <header className="flex justify-between items-center fixed h-20 top-3 w-full px-4 md:px-8 lg:px-12 xl:px-32">
+    <header className="flex justify-between items-center fixed h-20  w-full px-4 md:px-8 lg:px-12 xl:px-32 bg-blue-300 z-50">
       <div>
-        <Image src={logo} alt="logo" className="hidden sm:block size-20 sm:size-12" />
+        <Image
+          src={logo}
+          alt="logo"
+          className="hidden sm:block size-20 sm:size-12"
+        />
       </div>
 
       <nav className="flex justify-center items-center gap-4 px-6 p-0.5 border h-14 rounded-full border-white-900/60 bg-white-600  backdrop-blur">
