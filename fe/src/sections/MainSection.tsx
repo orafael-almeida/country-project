@@ -1,4 +1,5 @@
 import SectionTitle from "@/components/SectionTitle";
+import TableList from "@/components/TableList";
 
 const MainSection = () => {
   return (
@@ -7,6 +8,7 @@ const MainSection = () => {
         title="Country List"
         description="Complete list of coutnries and additional informations"
       />
+      <TableList />
     </div>
   );
 };
